@@ -40,24 +40,14 @@ services:
       POSTGRES_DB: airflow
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - "54320:5432"
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
       retries: 5
     restart: always
   
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
-    restart: always
-    ports:
-      - "8888:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: pgadmin
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-
   redis:
     image: redis:latest
     expose:
