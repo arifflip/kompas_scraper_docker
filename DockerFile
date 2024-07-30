@@ -1,0 +1,2 @@
+FROM Python
+COPY /dags /opt/airflow/dags
