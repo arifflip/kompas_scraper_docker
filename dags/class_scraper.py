@@ -1,4 +1,7 @@
-#Libraries
+#|----------------------------------------------------------------------------------|  
+#  Dependecies 
+#|----------------------------------------------------------------------------------|
+
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 import requests
@@ -8,7 +11,9 @@ from datetime import datetime
 import json
 import time
 
-# scraper object
+#|----------------------------------------------------------------------------------|  
+#  Scraper Class 
+#|----------------------------------------------------------------------------------|
 class scraper:
 
   #instances
